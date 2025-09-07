@@ -1,0 +1,19 @@
+1. Customers: Wypisz klientów, których City zaczyna się na ‘A’ lub ‘B’, a Country należy do zestawu (‘Germany’, ‘France’); posortuj rosnąco po CompanyName i ogranicz wynik do 25 wierszy (kolumny: CustomerID, CompanyName, City, Country).
+
+2. Products: Pokaż produkty o UnitPrice między 20 a 50 (włącznie) oraz z UnitsInStock > 0; posortuj malejąco po UnitPrice, a następnie rosnąco po ProductName (kolumny: ProductID, ProductName, UnitPrice, UnitsInStock).
+
+3. Products: Zwróć produkty, które są Discontinued = 1 lub mają UnitsInStock = 0; a wynik posortuj po Discontinued malejąco i po ProductName rosnąco (kolumny: ProductID, ProductName, Discontinued, UnitsInStock).
+
+4. Orders: Wyświetl zamówienia niewysłane (ShippedDate), posortowane po OrderDate malejąco, ogranicz do 20 najnowszych (kolumny: OrderID, CustomerID, OrderDate, ShippedDate).
+
+5. Orders: Pokaż zamówienia wysłane do krajów z listy (‘USA’, ‘UK’, ‘Brazil’) z Freight > 100; posortuj malejąco po Freight, a wynik ogranicz do 15 (kolumny: OrderID, ShipCountry, Freight, ShippedDate).
+
+6. Suppliers: Znajdź dostawców, którzy mają puste Fax lub nieuzupełniony Region (Fax, Region); posortuj po CompanyName rosnąco (kolumny: SupplierID, CompanyName, Region, Fax).
+
+7. Employees: Zwróć pracowników, których Title zawiera ‘Sales’ i City jest w (‘London’, ‘Seattle’), lub takich, którzy nie mają przełożonego; posortuj po LastName, FirstName (kolumny: EmployeeID, LastName, FirstName, Title, City, ReportsTo).
+
+8. Categories: Wypisz kategorie, których Description zawiera słowo ‘beverage’  lub ‘sweet’ ; posortuj po CategoryName (kolumny: CategoryID, CategoryName, Description).
+
+9. Shippers: Pokaż przewoźników, których Phone pasuje do wzorca (503) lub 555; posortuj po CompanyName i ogranicz do 10 (kolumny: ShipperID, CompanyName, Phone).
+ 
+10. Order Details: Znajdź pozycje zamówień z Discount > 0 i UnitPrice > 30 lub Quantity >= 60; posortuj malejąco po Discount, a potem po Quantity (kolumny: OrderID, ProductID, UnitPrice, Quantity, Discount).
