@@ -70,6 +70,20 @@ HAVING
 	SUM(od.quantity*od.unit_price) > 1500
 
 
+-- 5. SELECT, subquery, CASE, ORDER BY
+SELECT
+	product_id,
+	product_name,
+	unit_price,
+	CASE
+		WHEN unit_price > (SELECT AVG(unit_price) FROM products) THEN 'Yes'
+		ELSE 'No'
+		END as Above_Average
+FROM
+	products
+ORDER BY
+	unit_price DESC;
+
 
 
 
