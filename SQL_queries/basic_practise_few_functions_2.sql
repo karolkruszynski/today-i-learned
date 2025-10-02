@@ -182,9 +182,61 @@ ORDER BY
 	p1.total_quantity DESC;
 
 
+-- 9.SELECT, CASE, NULLIF
+SELECT
+	order_id,
+	order_date,
+	shipped_date,
+	CASE
+		WHEN NULLIF(shipped_date, NULL) IS NULL THEN 'No Data'
+		ELSE CAST((shipped_date - order_date) as text)
+		END as shipping_delay
+FROM
+	orders
+ORDER BY
+	order_date;
 
 
+-- 10. SELECT, SUBQUERY, ORDER BY
+SELECT
+	c.customer_id,
+	c.company_name,
+	(
+		SELECT
+			COUNT(*)
+		FROM
+			orders o
+		WHERE
+			o.customer_id = c.customer_id
+	) as total_orders
 
+FROM
+	customers c
+WHERE
+    (
+        SELECT COUNT(*)
+        FROM orders o
+        WHERE o.customer_id = c.customer_id
+    ) >= 3
+ORDER BY total_orders DESC;
+
+-- V2 
+SELECT
+	c.customer_id,
+	c.company_name,
+	COUNT(o.order_id) as total_orders
+FROM
+	customers c
+JOIN
+	orders o ON o.customer_id = c.customer_id
+GROUP BY
+	c.customer_id, c.company_name
+HAVING
+	COUNT(o.order_id) >= 3
+ORDER BY
+ 	total_orders DESC;
+	
+	
 
 
 
